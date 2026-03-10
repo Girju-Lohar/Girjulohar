@@ -608,12 +608,23 @@ footer p { font-family: var(--ff-mono); font-size: 9px; letter-spacing: 2px; col
     <p class="tag">// 006 — Projects</p>
     <h2 class="heading">SELECTED<br>WORK</h2>
   </div>
-  <div class="work-grid rv" id="workGrid"></div>
-  <div class="work-tip rv">
-    <p>💡 <strong>Apni Google Drive images add karo:</strong> Neeche JS section mein <code>workData</code> array find karo aur apna File ID paste karo. Instructions comments mein hain.</p>
+  <div class="rv" style="text-align:center; padding: 40px 0;">
+    <p style="font-size:16px; color:rgba(240,236,227,.6); font-weight:300; margin-bottom:32px; line-height:1.8;">
+      Mere saare graphic design aur video editing projects<br>Google Drive pe available hain.
+    </p>
+    <a href="https://drive.google.com/drive/folders/15-b60M_70TNK4JJasf2FiACrV-2Mp-7j"
+       target="_blank"
+       style="display:inline-flex; align-items:center; gap:12px;
+              background:#ff3c1f; color:#080808; padding:18px 48px;
+              font-family:'Bebas Neue',Impact,sans-serif; font-size:20px;
+              letter-spacing:3px; text-decoration:none; transition:background .2s;">
+      View All My Work ↗
+    </a>
+    <p style="margin-top:20px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:2px; color:rgba(240,236,227,.3); text-transform:uppercase;">
+      Google Drive · 200+ Design · 260+ Video Projects
+    </p>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact" class="sec">
   <div class="c-wrap">
@@ -672,68 +683,6 @@ footer p { font-family: var(--ff-mono); font-size: 9px; letter-spacing: 2px; col
 // 4. Neeche image: field mein paste karo:
 //    image: "https://drive.google.com/uc?export=view&id=FILE_ID"
 // ============================================================
-var workData = [
-  {
-    cat: "Video Editing", title: "@BMGPRATING Reels",
-    desc: "Transitions, effects, music sync & hooks.",
-    icon: "▶", bg: "linear-gradient(135deg,#1a0a05,#3d1a10)", ic: "#ff3c1f", big: true
-    // image: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID",
-    // link:  "https://drive.google.com/file/d/YOUR_FILE_ID/view"
-  },
-  {
-    cat: "Branding", title: "Brand Identity Kit",
-    desc: "Logo, color palette, business card & letterhead.",
-    icon: "◈", bg: "linear-gradient(135deg,#050d1a,#0d1f3c)", ic: "#4a9eff"
-    // image: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID",
-    // link:  "https://drive.google.com/file/d/YOUR_FILE_ID/view"
-  },
-  {
-    cat: "Instagram Mgmt", title: "Jeevan Soap Page",
-    desc: "Reels, captions, hashtags & paid promotions.",
-    icon: "✦", bg: "linear-gradient(135deg,#0d1a08,#1a3d10)", ic: "#4aff6e"
-    // image: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID",
-    // link:  "https://drive.google.com/file/d/YOUR_FILE_ID/view"
-  },
-  {
-    cat: "Social Media Design", title: "Carousel & Post Pack",
-    desc: "200+ social media creatives for multiple clients.",
-    icon: "⬡", bg: "linear-gradient(135deg,#1a1505,#3d320d)", ic: "#ffd600"
-    // image: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID",
-    // link:  "https://drive.google.com/file/d/YOUR_FILE_ID/view"
-  },
-  {
-    cat: "Print Design", title: "Poster & Flyer Series",
-    desc: "Event posters, promotional banners & flyers.",
-    icon: "◉", bg: "linear-gradient(135deg,#14051a,#2d0d3d)", ic: "#c44aff"
-    // image: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID",
-    // link:  "https://drive.google.com/file/d/YOUR_FILE_ID/view"
-  },
-  {
-    cat: "YouTube Graphics", title: "Thumbnail Pack",
-    desc: "Eye-catching YouTube thumbnails with bold typography.",
-    icon: "◐", bg: "linear-gradient(135deg,#1a0a15,#3d102d)", ic: "#ff6ba8"
-    image: "https://drive.google.com/file/d/1e56yGbGiVbbvLwzk1i5qN38FTb3z9v1x/view?usp=drivesdk",
-    link:  "https://drive.google.com/file/d/1e56yGbGiVbbvLwzk1i5qN38FTb3z9v1x/view?usp=drivesdk/view"
-  }
-];
-
-// Render work grid
-var wg = document.getElementById('workGrid');
-workData.forEach(function(w) {
-  var div = document.createElement('div');
-  div.className = 'w-item' + (w.big ? ' big' : '');
-  var inner = '';
-  if (w.image) {
-    inner += '<img src="' + w.image + '" alt="' + w.title + '" class="w-img">';
-  } else {
-    inner += '<div class="w-thumb" style="background:' + w.bg + ';color:' + w.ic + '">' + w.icon + '</div>';
-    inner += '<div class="add-badge"><p>Add Image<span>See JS section</span></p></div>';
-  }
-  inner += '<div class="w-over"><span class="w-cat">' + w.cat + '</span><div class="w-name">' + w.title + '</div><div class="w-desc">' + w.desc + '</div>';
-  if (w.link) inner += '<a href="' + w.link + '" target="_blank" class="w-link">View on Drive ↗</a>';
-  inner += '</div>';
-  div.innerHTML = inner;
-  wg.appendChild(div);
 });
 
 // Marquee
